@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/category/personal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-216.000000, -56.000000)" fill="#616161">
+            <g id="icon/category/personal" transform="translate(216.000000, 56.000000)">
+                <path d="M20,12 C20,14.54 18.81,16.81 16.96,18.27 L16.28,22.33 C16.12,23.29 15.29,24 14.31,24 L9.7,24 C8.72,24 7.88,23.29 7.72,22.33 L7.05,18.27 C5.19,16.81 4,14.55 4,12 C4,9.45 5.19,7.19 7.05,5.73 L7.72,1.67 C7.88,0.71 8.72,0 9.7,0 L14.31,0 C15.28,0 16.12,0.71 16.28,1.67 L16.96,5.73 C18.81,7.19 20,9.46 20,12 Z M6,12 C6,15.31 8.69,18 12,18 C15.31,18 18,15.31 18,12 C18,8.69 15.31,6 12,6 C8.69,6 6,8.69 6,12 Z M15.0177,13.0131 C15.3677,13.2131 15.4777,13.6631 15.2677,14.0131 C15.0677,14.3531 14.6277,14.4531 14.2877,14.2531 L11.7728,12.7368 C11.4628,12.5568 11.2828,12.2268 11.2828,11.8768 L11.2828,8.3035 C11.2828,7.9035 11.6028,7.5835 12.0028,7.5835 L12.0628,7.5835 C12.4628,7.5835 12.7828,7.9035 12.7828,8.3035 L12.7828,11.6868 L15.0177,13.0131 Z" id="Fill-1"></path>
+            </g>
+        </g>
+    </g>
+</svg>

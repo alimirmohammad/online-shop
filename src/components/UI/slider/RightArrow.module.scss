@@ -1,0 +1,18 @@
+@import "../../../base";
+
+.RightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: rgba($color: $color-secondary, $alpha: .6);
+    padding: 1rem 1rem 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.Icon {
+    fill: rgba($color: $color-primary, $alpha: .6);
+    display: inline-block;
+}

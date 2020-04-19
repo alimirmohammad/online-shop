@@ -1,0 +1,43 @@
+@import "../../base";
+
+.Item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    transition: all .2s ease-out;
+
+    &:hover {
+        transform: translateY(-3px);        
+    }
+
+    &:hover .Text,
+    &:hover .Icon {
+        color: $color-secondary;
+        fill: $color-secondary;
+        
+    }
+}
+
+.Icon {
+    fill: #fff;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    transition: all .2s ease-out;
+}
+
+.Text {
+    text-decoration: none;
+    color: #fff;
+    transition: all .2s ease-out;
+}
+
+.Active {
+    .Item {
+        .Text,
+        .Icon {
+            color: $color-secondary;
+            fill: $color-secondary;
+        }
+    }
+}

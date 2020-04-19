@@ -1,0 +1,15 @@
+@import "../../base";
+
+.Sidebar {
+    background-color: $color-primary-dark;
+    width: 100%;
+    padding: 1rem;
+    // height: 100vh;
+    color: #fff;
+
+    h4 {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+    }
+}

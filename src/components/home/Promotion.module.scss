@@ -1,0 +1,35 @@
+@import "../../base";
+
+.Promotion {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-gap: 2rem;
+    color: $color-brown-dark-1;
+    padding: 4rem 0;
+}
+
+.Item {
+    text-align: center;
+}
+
+.Heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.ImgBox {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.Img {
+    width: 100%;
+    display: block;
+    transition: filter .2s ease-out;
+
+    &:hover {
+        filter: grayscale(80%);
+    }
+}

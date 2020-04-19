@@ -1,0 +1,82 @@
+@import "../../base";
+
+.Card {
+    background-color: $color-grey-light-1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 3.5rem;
+    transition: all .2s ease-out;
+
+    &:hover {
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .6);
+        transform: translateY(-3px);
+    }
+}
+
+.Img {
+    width: 100%;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    z-index: 1;
+}
+
+.Name {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: end;
+    z-index: 3;
+    width: 80%;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1.25rem;
+    background-color: $color-secondary;
+    
+    font-weight: 400;
+    transform: translateY(50%);
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.Brand,
+.Warranty {
+    margin-top: 2.5rem;
+}
+
+.Brand,
+.Warranty,
+.Made,
+.Price {
+    font-size: 1.5rem;
+    color: $color-brown-dark-2;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.Icon {
+    fill: $color-primary;
+    height: 2rem;
+    width: 2rem;
+    margin-left: 1rem;
+}
+
+.Btn {
+    grid-column: 1 / -1;
+    background-color: $color-primary;
+    color: #fff;
+    font-family: inherit;
+    border: none;
+    border-radius: 0;
+    font-size: 1.5rem;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+}

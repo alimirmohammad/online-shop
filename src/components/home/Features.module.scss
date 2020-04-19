@@ -1,0 +1,31 @@
+@import "../../base";
+
+.Features {
+    margin: 10rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 6rem;
+    align-items: start;
+}
+
+.Feature {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+}
+
+.Icon {
+    fill: $color-primary;
+    width: 3.5rem;
+    height: 3.5rem;
+
+    grid-row: 1 / span 2;
+    transform: translateY(-1rem);
+}
+
+.Text {
+    font-size: 1.7rem;
+    // text-align: justify;
+}

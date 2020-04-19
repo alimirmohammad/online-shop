@@ -1,0 +1,25 @@
+@import "./fonts";
+@import "./base";
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Shabnam', sans-serif;
+  font-size: 1.6rem;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+  direction: rtl;
+  padding-top: 11rem;
+}

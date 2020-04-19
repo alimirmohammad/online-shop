@@ -1,0 +1,147 @@
+@import "../../base";
+
+.Header {
+    background-color: $color-primary;
+    padding: 0 1rem 1rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    // height: 5rem;
+}
+
+.RowOne {
+    display: flex;
+    align-items: center;
+}
+
+.ItemsLeft {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.NavList {
+    list-style: none;
+    display: flex;
+}
+
+.NavItem {
+    height: 100%;
+    &:not(:last-child) {
+        margin-left: 3rem;
+    }
+
+    a:link,
+    a:visited {
+        text-decoration: none;
+        color: #fff;
+
+        &:first-child {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    a:hover,
+    a:active {
+        color: $color-grey-light-2;
+        transition: all .2s ease-out;
+        transform: scale(1.05);
+    }
+
+    a:hover .Menu,
+    a:active .Menu {
+        fill: $color-grey-light-2;
+    }
+}
+
+.Menu {
+    height: 2rem;
+    width: 2rem;
+    margin-left: .5rem;
+    fill: #fff;
+    transition: all .2s ease-out;
+}
+
+.LogoBox {
+    // height: 100%;
+}
+
+.Logo {
+    height: 5rem;
+    // width: 5rem;
+    margin-left: 1rem;
+}
+
+.Search {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SearchInput {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: $color-grey-light-2;
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all .2s;
+    margin-left: -3.25rem;
+
+    &:focus {
+        outline: none;
+        width: 100%;
+        background-color: $color-grey-light-3;
+    }
+
+    &::-webkit-input-placeholder {
+        font-weight: 100;
+        color: $color-grey-light-4;
+    }
+}
+
+.SearchInput:focus + .SearchBtn {
+    background-color: $color-grey-light-3;
+}
+
+.SearchBtn {
+    border: none;
+    background-color: $color-grey-light-2;
+    
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+}
+
+.SearchIcon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-grey-dark-3;
+}
+
+.UserBox {
+    margin-left: 2rem;
+}
+
+.Icon {
+    height: 3rem;
+    width: 3rem;
+    fill: #fff;
+    transition: all .2s ease-out;
+    cursor: pointer;
+
+    &:hover {
+        fill: $color-grey-light-2;
+        transform: scale(1.05);
+    }
+}

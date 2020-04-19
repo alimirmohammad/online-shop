@@ -1,0 +1,64 @@
+@import "../../base";
+
+.ProductPage {
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
+
+.Description {
+    color: $color-brown-dark-2;
+    font-weight: 300;
+    padding: 6rem 4rem;
+
+    h4 {
+        color: $color-primary;
+        margin-bottom: 2rem;
+        font-weight: 400;
+    }
+
+    h2 {
+        color: $color-brown-dark-1;
+        margin-bottom: 3rem;
+        font-weight: 400;
+    }
+
+    ul {
+        list-style: none;
+        margin-bottom: 3rem;
+
+        li {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+.ImgContainer {
+    color: #fff;
+
+    img {
+        width: 80%;
+        display: block;
+        margin: 2rem auto;
+        border-radius: 5px;
+    }
+}
+
+.Btn {
+    background-color: $color-primary;
+    color: #fff;
+    font-family: inherit;
+    border: none;
+    border-radius: 0;
+    font-size: 1.5rem;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+}

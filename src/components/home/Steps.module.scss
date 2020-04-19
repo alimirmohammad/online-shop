@@ -1,0 +1,34 @@
+@import "../../base";
+
+.Steps {
+    width: 100%;
+    padding: 4rem 0;
+    color: $color-brown-dark-2;
+}
+
+.Items {
+    padding: 1rem 40% 1rem 0;
+
+    h4 {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+    ul {
+        list-style: none;
+        font-size: 2rem;
+    }
+
+    li {
+        display: flex;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.Icon {
+    margin-left: 1rem;
+    fill: $color-primary;
+}

@@ -1,0 +1,12 @@
+@import "../../base";
+
+.List {
+    list-style: none;
+    background-color: $color-grey-dark-3;
+    width: fit-content;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 9.4rem;
+    right: 0;
+    z-index: 10;
+}

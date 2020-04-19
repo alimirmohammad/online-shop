@@ -1,0 +1,13 @@
+@import "../../base";
+
+.Item {
+    color: $color-grey-dark-1;
+    padding-right: 5rem;
+    margin-bottom: 1rem;
+    transition: all .2s ease-out;
+
+    &:hover {
+        color: #fff;
+        transform: scale(1.05);
+    }
+}
