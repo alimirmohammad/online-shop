@@ -1,10 +1,9 @@
-import {createContext} from 'react';
+import { createContext } from "react";
 
 export const initialAuth = {
-    token: null
+  token: null,
 };
 
-const AuthContext = createContext({});
-
+const AuthContext = createContext(initialAuth);
 
 export default AuthContext;

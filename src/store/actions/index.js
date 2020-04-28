@@ -7,3 +7,7 @@ export {
 export {
     login, logout
 } from './auth';
+
+export {
+    addItem, removeItem, clearItemFromCart, clearCart, setCart
+} from './cart';

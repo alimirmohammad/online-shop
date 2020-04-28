@@ -9,8 +9,10 @@ import LoginPage from "./components/login/LoginPage";
 import { Switch, Route } from "react-router-dom";
 import CategoryContext, { initialCategory } from "./context/CategoryContext";
 import AuthContext, { initialAuth } from "./context/authContext";
+import CartContext, { initialCart } from "./context/CartContext";
 import categoryReducer from "./store/reducers/category";
 import authReducer from "./store/reducers/auth";
+import cartReducer from "./store/reducers/cart";
 import {
   categorySend,
   categorySuccess,
@@ -19,8 +21,10 @@ import {
   amazingSet,
   topSet,
   login,
+  setCart,
 } from "./store/actions";
 import { useCookies } from "react-cookie";
+import CartPage from "./components/cart/CartPage";
 
 function App() {
   const [categoryState, dispatch] = useReducer(
@@ -28,8 +32,35 @@ function App() {
     initialCategory
   );
   const [authState, dispatchAuth] = useReducer(authReducer, initialAuth);
+  const [cartState, dispatchCart] = useReducer(cartReducer, initialCart);
   const value = { state: categoryState, dispatch: dispatch };
-  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["token", "cart"]);
+
+  useEffect(() => {
+    const asyncFunc = async (item) => {
+      const res = await fetch(
+        "http://5.9.249.45:8000/finance/MyShoppingCart/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `jwt ${authState.token}`,
+          },
+          body: JSON.stringify({ item: item.id, quantity: item.quantity }),
+        }
+      );
+      return res.json();
+    };
+
+    const syncCartWithBackend = async () => {
+      try {
+        await Promise.all(cartState.cartItems.map(item => asyncFunc(item)));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    if (authState.token) syncCartWithBackend();
+  }, [authState.token]);
 
   useEffect(() => {
     async function fetchCategory() {
@@ -56,22 +87,15 @@ function App() {
         dispatch(categoryFail(error));
       }
     }
+
+    if (cookies.cart) {
+      dispatchCart(setCart(cookies.cart));
+    }
+
     if (cookies.token) {
-      const fetchCart = async (token) => {
-        const res = await fetch(
-          "http://5.9.249.45:8000/finance/MyShoppingCart/",
-          {
-            headers: {
-              Authorization: `jwt ${token}`,
-            },
-          }
-        );
-        const data = await res.json();
-        console.log("CART", data);
-      };
-      fetchCart(cookies.token);
       dispatchAuth(login(cookies.token));
     }
+
     dispatch(categorySend());
     fetchCategory();
   }, []);
@@ -80,33 +104,36 @@ function App() {
     <>
       <AuthContext.Provider value={{ authState, dispatchAuth }}>
         <CategoryContext.Provider value={value}>
-          <Header />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/login" exact component={LoginPage} />
-            <Route
-              path="/signup"
-              exact
-              render={(props) => <LoginPage signup {...props} />}
-            />
-            <Route path="/cart" exact render={() => <CategoryPage cart />} />
-            <Route
-              path="/:category"
-              exact
-              render={(props) => <CategoryPage ads {...props} />}
-            />
-            <Route
-              path="/:category/:subcategory"
-              exact
-              render={(props) => <CategoryPage products {...props} />}
-            />
-            <Route
-              path="/:category/:subcategory/:product"
-              exact
-              component={ProductPage}
-            />
-          </Switch>
-          <Footer />
+          <CartContext.Provider value={{ cartState, dispatchCart }}>
+            <Header />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/login" exact component={LoginPage} />
+              <Route
+                path="/signup"
+                exact
+                render={(props) => <LoginPage signup {...props} />}
+              />
+              /> */}
+              <Route path="/cart" exact component={CartPage} />
+              <Route
+                path="/:category"
+                exact
+                render={(props) => <CategoryPage ads {...props} />}
+              />
+              <Route
+                path="/:category/:subcategory"
+                exact
+                render={(props) => <CategoryPage products {...props} />}
+              />
+              <Route
+                path="/:category/:subcategory/:product"
+                exact
+                component={ProductPage}
+              />
+            </Switch>
+            <Footer />
+          </CartContext.Provider>
         </CategoryContext.Provider>
       </AuthContext.Provider>
     </>

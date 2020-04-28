@@ -145,3 +145,31 @@
         transform: scale(1.05);
     }
 }
+
+.CartIcon {
+    position: relative;
+}
+
+.ItemsCount {
+    position: absolute;
+    display: inline-block;
+    top: -2rem;
+    right: -1rem;
+    background-color: red;
+    text-align: center;
+    // padding: .5rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    z-index: 1;
+    color: #fff;
+}
+
+.WelcomeBox {
+    color: #fff;
+    display: flex;
+
+    span {
+        margin-left: 2rem;
+    }
+}
