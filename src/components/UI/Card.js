@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Card.module.scss";
-import { ReactComponent as Icon1 } from "../../assets/svg/instagram.svg";
-import { ReactComponent as Icon2 } from "../../assets/svg/telegram.svg";
-import { ReactComponent as Icon3 } from "../../assets/svg/twitter.svg";
-import { ReactComponent as Icon4 } from "../../assets/svg/youtube.svg";
+import { ReactComponent as Icon1 } from "../../assets/svg/shop.svg";
+import { ReactComponent as Icon2 } from "../../assets/svg/folder_open.svg";
+import { ReactComponent as Icon3 } from "../../assets/svg/hash.svg";
+import { ReactComponent as Icon4 } from "../../assets/svg/attach_money.svg";
 import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { commafy } from "../../utils/commafy";
@@ -16,25 +16,25 @@ const Card = ({ data, match }) => {
     product = urlSplit[urlSplit.length - 2];
   }
 
-  const addToCartHandler = async (name) => {
-    try {
-      const res = await fetch(
-        "http://5.9.249.45:8000/finance/MyShoppingCart/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `jwt ${cookies.token}`,
-          },
-          body: JSON.stringify({ item: name, quantity: 1 }),
-        }
-      );
-      const data = await res.json();
-      console.log("ADD TO CART RES", data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const addToCartHandler = async (name) => {
+  //   try {
+  //     const res = await fetch(
+  //       "http://5.9.249.45:8000/finance/MyShoppingCart/",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `jwt ${cookies.token}`,
+  //         },
+  //         body: JSON.stringify({ item: name, quantity: 1 }),
+  //       }
+  //     );
+  //     const data = await res.json();
+  //     console.log("ADD TO CART RES", data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className={styles.Card}>

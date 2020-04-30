@@ -14,6 +14,7 @@ const CheckoutItem = ({ cartItem }) => {
   const { cartItems } = cartState;
 
   const postItemToBackend = async (item, quantity) => {
+    if (!cookies.token) return;
     try {
       const res = await fetch(
         "http://5.9.249.45:8000/finance/MyShoppingCart/",
@@ -59,17 +60,17 @@ const CheckoutItem = ({ cartItem }) => {
       <div className="image-container">
         <img src={image} alt="item" />
       </div>
-      <span className="name">{name}</span>
-      <span className="quantity">
+      <div className="name">{name}</div>
+      <div className="quantity">
         <div className="arrow" onClick={() => addHandler(cartItem)}>
           &#43;
         </div>
-        <span className="value">{quantity}</span>
+        <div className="value">{quantity}</div>
         <div className="arrow" onClick={() => removeHandler(cartItem)}>
           &#8722;
         </div>
-      </span>
-      <span className="price">{commafy(price)}</span>
+      </div>
+      <div className="price">{commafy(price)}</div>
       <div className="remove-button" onClick={() => clearHandler(cartItem)}>
         &#10005;
       </div>

@@ -6,6 +6,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 3.5rem;
     transition: all .2s ease-out;
+    padding-bottom: 2rem;
 
     &:hover {
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .6);
@@ -27,10 +28,11 @@
     align-self: end;
     z-index: 3;
     width: 80%;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     text-align: center;
     padding: 1.25rem;
     background-color: $color-secondary;
+    // margin-bottom: 2rem;
     
     font-weight: 400;
     transform: translateY(50%);
@@ -43,14 +45,19 @@
 
 .Brand,
 .Warranty {
-    margin-top: 2.5rem;
+    margin-top: 5rem;
+}
+
+.Warranty,
+.Price {
+    margin-left: 2rem;
 }
 
 .Brand,
 .Warranty,
 .Made,
 .Price {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: $color-brown-dark-2;
     margin-right: 2rem;
     display: flex;
