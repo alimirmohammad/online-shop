@@ -27,20 +27,23 @@ const ProductPage = ({ match }) => {
     };
 
     dispatchCart(addItem(itemToAdd));
-    //
+
     try {
-        const res = await fetch('http://5.9.249.45:8000/finance/MyShoppingCart/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `jwt ${cookies.token}`
-            },
-            body: JSON.stringify({item: product.id, quantity: 1})
-        });
-        const data = await res.json();
-        console.log('ADD TO CART RES', data);
+      const res = await fetch(
+        "http://5.9.249.45:8000/finance/MyShoppingCart/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `jwt ${cookies.token}`,
+          },
+          body: JSON.stringify({ item: product.id, quantity: 1 }),
+        }
+      );
+      const data = await res.json();
+      console.log("ADD TO CART RES", data);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
   };
 
